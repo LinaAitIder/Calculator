@@ -34,10 +34,7 @@ export const numbers = [
   {
     value:9,
     id:"nine",
-  }, {
-    value:0,
-    id:"zero",
-},
+  }
 ];
 
 export const firstOperators = [
@@ -47,9 +44,6 @@ export const firstOperators = [
   },{
     id: "multiply",
     value:"*"
-  },
-  { id: "equals",
-    value:"="
   }
 ];
 

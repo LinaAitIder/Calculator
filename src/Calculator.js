@@ -107,6 +107,8 @@ handleDecimalNum(){
             handleInput={this.handleInput}
             />
             ))}
+
+            <button></button>
           </div>
 
           <div className="grid-cols-4 grid gap-3  ">
@@ -119,6 +121,13 @@ handleDecimalNum(){
                 handleInput={this.handleInput}
                 />
               ))}
+              <button
+                id="zero"
+                onClick={()=>this.props.handleInput(this.props.value)}
+                className="col-span-2 bg-blue-200"
+              >
+                0
+              </button>
               <Decimal 
               handleDecimalNum={this.handleDecimalNum}  className="py-3" />
             </div>
@@ -132,6 +141,14 @@ handleDecimalNum(){
               />
             ))}
           
+          <button
+            id="equals"
+            value="="
+            handleInput={this.handleInput}
+            className="h-full bg-purple-100"
+          >
+            =
+          </button>
               </div>
         
           </div>
