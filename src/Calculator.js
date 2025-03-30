@@ -9,7 +9,7 @@ class Calculator extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      output : "",
+      output : " ",
     };
 
     this.clearValues=this.clearValues.bind(this);
@@ -26,7 +26,7 @@ class Calculator extends React.Component{
  handleInput(inputValue) {
   let newOutput = ""; 
   if(inputValue === "=")  {
-    let result = eval(this.state.output);
+    let result = eval(this.state.output)!==undefined ? eval(this.state.output) : " ";
     this.setState({
       output:`${result}`
     });
@@ -108,7 +108,6 @@ handleDecimalNum(){
             />
             ))}
 
-            <button></button>
           </div>
 
           <div className="grid-cols-4 grid gap-3  ">
@@ -121,16 +120,23 @@ handleDecimalNum(){
                 handleInput={this.handleInput}
                 />
               ))}
-              <button
-                id="zero"
-                onClick={()=>this.props.handleInput(this.props.value)}
-                className="col-span-2 bg-blue-200"
-              >
-                0
-              </button>
+
+              <div className="col-span-2  justify-center bg-blue-200">
+
+                 <Number
+                 key="zero"
+                 id="zero"
+                 value="0"
+                 handleInput={this.handleInput}
+    
+              />
+              </div>
+
+              
               <Decimal 
               handleDecimalNum={this.handleDecimalNum}  className="py-3" />
             </div>
+         
               <div className='flex-col flex gap-3'>
               {firstOperators.map((operator)=>(
               <Operator
@@ -139,16 +145,20 @@ handleDecimalNum(){
               value={operator.value}
               handleInput={this.handleInput}
               />
+            
+            
             ))}
-          
-          <button
-            id="equals"
-            value="="
-            handleInput={this.handleInput}
-            className="h-full bg-purple-100"
-          >
-            =
-          </button>
+            <div
+              className=" flex h-full  justify-center bg-blue-200"
+            >
+              <Operator
+                id="equals"
+                value="="
+                handleInput={this.handleInput}
+                className="h-full bg-purple-100"
+              />
+          </div>
+            
               </div>
         
           </div>

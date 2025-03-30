@@ -54,6 +54,6 @@ export const secondOperators = [
   },{
     id: "subtract",
     value:"-"
-  },
+  }
 ];
 
