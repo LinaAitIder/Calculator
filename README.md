@@ -6,6 +6,6 @@ This project was created to apply the knowledge I learned from the certified Cou
 React, TailwandCss
 
 # Preview ✨ 
-![image](https://github.com/user-attachments/assets/39b545e9-ab42-4883-a89c-8d962bd29868)
+![image](https://github.com/user-attachments/assets/74a3235e-f1ff-4595-9834-c231742d660d)
 
 
