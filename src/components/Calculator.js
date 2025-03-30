@@ -27,10 +27,17 @@ class Calculator extends React.Component{
     let newOutput = ""; 
     if(inputValue === "=")  {
       //The case where the final input is an op
-      let result = eval(this.state.output)!==undefined ? eval(this.state.output) : " ";
-      this.setState({
-        output:`${result}`
-      });
+      this.setState((prevState)=>{
+        let lastInput = prevState.output.slice(-1);
+        if(["+","-","*","/"].includes(lastInput)){
+          this.output = prevState;
+        } else {
+          let result = eval(this.state.output)!==undefined ? eval(this.state.output) : " ";
+          return {output : `${result}`};
+
+        }
+      })
+      
     } else if(["+","-","*","/"].includes(inputValue)){
       this.setState((prevState)=>{
         let prevOutput = String(prevState.output || "0"); 
@@ -87,11 +94,11 @@ class Calculator extends React.Component{
 
   render(){
     return (
-      <div class="flex flex-col items-center justify-center h-full p-10   " style={{height: "100vh !important" }} > 
+      <div class="flex flex-col items-center justify-center h-full p-10  " style={{height: "100vh !important" }} > 
 
-        <div className="w-96 bg-white shadow-lg rounded-lg mx-auto my-auto p-10 font-medium text-xl" >
+        <div className="w-96 bg-white shadow-lg rounded-lg mx-auto my-auto p-10 font-medium text-xl drop-shadow-xl" >
 
-          <div id="display" className="mb-4 p-10 text-white bg-sky-700 ">{this.state.output}</div>
+          <div id="display" className="mb-4 p-8  pl-3 text-white bg-sky-700 flex items-start font-small">{this.state.output}</div>
         
           <div className="p-1 m-4
           max-wd-auto mx-auto text-white ">
