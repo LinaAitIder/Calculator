@@ -87,7 +87,7 @@ class Calculator extends React.Component{
 
   render(){
     return (
-      <div class="flex items-center justify-center h-full p-10   " style={{height: "100vh !important" }} > 
+      <div class="flex flex-col items-center justify-center h-full p-10   " style={{height: "100vh !important" }} > 
 
         <div className="w-96 bg-white shadow-lg rounded-lg mx-auto my-auto p-10 font-medium text-xl" >
 
@@ -130,7 +130,7 @@ class Calculator extends React.Component{
                 ))}
 
                 <div className="col-span-2  justify-center bg-sky-900  
-                hover:bg-gray-300 focus:outline-2 
+                hover:bg-gray-300 
                 hover:text-black">
 
                   <Number
@@ -171,6 +171,7 @@ class Calculator extends React.Component{
           </div>
 
         </div>
+        <div className="italic  font-medium">Created By Lina Ait Ider</div>
       </div>
       
     );
